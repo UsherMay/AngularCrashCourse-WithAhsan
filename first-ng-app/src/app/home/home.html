@@ -1,4 +1,3 @@
-<p>home works!</p>
 <!-- the default message -->
 <!-- <app-greeting/> -->
 <!-- hard coded -->
@@ -8,7 +7,9 @@
 <!-- from home component -->
 <app-greeting [message]="homeMessage()"/>
 
+<app-counter />
+
 <!-- basics -->
 <!-- <input type="text" (keyup)="keyUpHandler()"> -->
 <!-- with event param -->
- <input type="text" (keyup)="keyUpHandler($event)">
+ <input placeholder="Type sth..." type="text" (keyup)="keyUpHandler($event)">
