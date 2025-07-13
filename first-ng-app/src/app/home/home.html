@@ -7,3 +7,8 @@
 <!-- <app-greeting message="Hello World 1234"/> -->
 <!-- from home component -->
 <app-greeting [message]="homeMessage()"/>
+
+<!-- basics -->
+<!-- <input type="text" (keyup)="keyUpHandler()"> -->
+<!-- with event param -->
+ <input type="text" (keyup)="keyUpHandler($event)">
