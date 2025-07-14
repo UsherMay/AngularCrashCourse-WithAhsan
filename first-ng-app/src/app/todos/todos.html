@@ -17,9 +17,14 @@
     <p>Loading...</p>
 }
 
+<form>
+    <label>Filter Todos</label>
+    <input name="searchTerm" [(ngModel)]="searchTerm" placeholder="search todos..." />
+</form>
+
 <ul class="todos">
     <!-- the track ~ what is unique is you compared all items -->
-    @for (todo of todoItems(); track todo.id) {
+    @for (todo of todoItems() | filterTodos : searchTerm() ; track todo.id) {
         <app-todo-item (todoToggle)="updateTodoItem($event)" [todo]="todo"/>
     }
 </ul>
