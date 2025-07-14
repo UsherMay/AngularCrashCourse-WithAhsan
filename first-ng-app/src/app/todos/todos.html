@@ -1,1 +1,13 @@
-<p>todos works!</p>
+<!-- <p>{{todoService.todoItems}}</p>
+<p>{{todoService.todoItems[0].title}}</p> -->
+<!-- <p>{{todoItems()[0].title}}</p> -->
+
+
+<!-- @for (todo of todoItems(); track $index) {
+    <p>{{todo.title}}</p>
+} -->
+<!-- the track ~ what is unique is you compared all items -->
+@for (todo of todoItems(); track todo.id) {
+    <p>{{todo.title}}</p>
+}
+
