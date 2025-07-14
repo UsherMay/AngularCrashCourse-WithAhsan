@@ -10,12 +10,17 @@
 
 <h3>Todos List</h3>
 
+<!-- <p *ngIf="!todoItems().length">Loading...</p> -->
+<!-- this is a structural directive : (above is the old way)
+ the element exist while the if is true and it's removed from the dom when the data is loaded-->
+@if (!todoItems().length) {
+    <p>Loading...</p>
+}
+
 <ul class="todos">
     <!-- the track ~ what is unique is you compared all items -->
     @for (todo of todoItems(); track todo.id) {
-        <li class="todos__item">
-            <input id="todo-{{todo.id}}" type="checkbox" [value]="todo.completed"/> <label for="todo-{{todo.id}}">{{todo.title}}</label>
-        </li>
+        <app-todo-item (todoToggle)="updateTodoItem($event)" [todo]="todo"/>
     }
 </ul>
 
