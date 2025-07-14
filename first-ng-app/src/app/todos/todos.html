@@ -6,8 +6,17 @@
 <!-- @for (todo of todoItems(); track $index) {
     <p>{{todo.title}}</p>
 } -->
-<!-- the track ~ what is unique is you compared all items -->
-@for (todo of todoItems(); track todo.id) {
-    <p>{{todo.title}}</p>
-}
+
+
+<h3>Todos List</h3>
+
+<ul class="todos">
+    <!-- the track ~ what is unique is you compared all items -->
+    @for (todo of todoItems(); track todo.id) {
+        <li class="todos__item">
+            <input id="todo-{{todo.id}}" type="checkbox" [value]="todo.completed"/> <label for="todo-{{todo.id}}">{{todo.title}}</label>
+        </li>
+    }
+</ul>
+
 
